@@ -1,0 +1,18 @@
+body {
+  background-color: #101010;
+  color: #ffffff;
+  font-family: "Comic Sans MS", cursive;
+  font-size: 16px;
+}
+h1 {
+  color: #ffffff;
+}
+nav a {
+  color: #ffffff;
+}
+footer {
+  color: #ffffff;
+}
+a {
+  color: #d919ff;
+}
