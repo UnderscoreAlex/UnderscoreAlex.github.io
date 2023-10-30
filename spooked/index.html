@@ -14,14 +14,15 @@
             background-size: 100% 100%;
         }
     </style>
-    <script>
-        function playSound() {
-            var audio = new Audio('https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/spooked/spooked.mp3');
-            audio.play();
-        }
+  <script>
+      function playSound() {
+          var audio = new Audio('https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/spooked/spooked.mp3');
+          audio.play();
+      }
 
-        document.addEventListener('click', playSound);
-    </script>
+      window.addEventListener('DOMContentLoaded', playSound);
+      document.addEventListener('click', playSound);
+  </script>
 </head>
 <body></body>
 </html>
