@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>* But nobody came</title></title>
+    <title>Centered Image</title>
     <style>
         body {
             margin: 0;
@@ -22,7 +22,6 @@
         .image-container {
             width: 400px; /* Adjust width as needed */
             height: 250px; /* Adjust height as needed */
-            animation: playOnce 1s steps(1) forwards;
             background-image: url("https://cdn.discordapp.com/attachments/546361440731136008/1209002284999123014/undertale_text_box.gif?ex=65e5561e&is=65d2e11e&hm=046ab3279dc7f27cd758995b8f69b6131dc880d4b21da9755f568b9f1ce6e40d");
             background-size: contain;
             background-repeat: no-repeat;
@@ -33,12 +32,21 @@
             height: 0;
             overflow: hidden;
         }
+        .video-container iframe {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="image-container"></div>
     <div class="video-container">
-        <iframe width="0" height="0" src="https://www.youtube.com/embed/CzM2oWtTAws?autoplay=1" frameborder="0" allowfullscreen></iframe>
+        <iframe width="0" height="0" src="https://www.youtube.com/embed/CzM2oWtTAws?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
+    <script>
+        // Pause the video after a while
+        setTimeout(function(){
+            document.querySelector('.video-container iframe').style.display = 'none';
+        }, 10000); // Adjust the time as needed (10000 milliseconds = 10 seconds)
+    </script>
 </body>
 </html>
