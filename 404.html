@@ -14,11 +14,6 @@
             height: 100vh;
             background-color: black;
         }
-        @keyframes playOnce {
-            to {
-                opacity: 1;
-            }
-        }
         .image-container {
             width: 400px; /* Adjust width as needed */
             height: 250px; /* Adjust height as needed */
@@ -27,14 +22,6 @@
             background-repeat: no-repeat;
             background-position: center;
         }
-        .video-container {
-            width: 0;
-            height: 0;
-            overflow: hidden;
-        }
-        .video-container iframe {
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -42,11 +29,5 @@
     <div class="video-container">
         <iframe width="0" height="0" src="https://www.youtube.com/embed/CzM2oWtTAws?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
-    <script>
-        // Pause the video after a while
-        setTimeout(function(){
-            document.querySelector('.video-container iframe').style.display = 'none';
-        }, 10000); // Adjust the time as needed (10000 milliseconds = 10 seconds)
-    </script>
 </body>
 </html>
