@@ -83,19 +83,17 @@
                 { url: 'https://cdn.discordapp.com/attachments/546361440731136008/1181710291986301048/image.png', link: 'https://www.clown.company/credits' }
             ];
 
-            function setRandomContentImage1() {
-                var randomIndex = Math.floor(Math.random() * imageArray1.length);
-                $('.image-container-left img').attr('src', imageArray1[randomIndex].url);
-                $('.image-container-left a').attr('href', imageArray1[randomIndex].link);
-            }
-
-            setRandomContentImage1();
-
             var imageArray2 = [
                 { url: 'https://cdn.discordapp.com/attachments/632337938507628564/1208998056658468904/clompstore_ad.png?ex=65e5522e&is=65d2dd2e&hm=815202ff9f3da4309147eda11c2e32ade1f30e355a2f5a0788e89be15b2d2290&', link: 'https://www.shop.clown.company' },
                 { url: 'https://cdn.discordapp.com/attachments/632337938507628564/1209008395026301018/youtub_ad.png?ex=65e55bcf&is=65d2e6cf&hm=6761a9957f2a803ed91772a7cb8b5c1450f30780c8f17d56337bb4f9d9a4024c&', link: 'https://www.youtube.com/@clownclownclownclownclown' },
                 { url: 'https://cdn.discordapp.com/attachments/546361440731136008/1181710291986301048/image.png', link: 'https://www.clown.company/credits' }
             ];
+
+            function setRandomContentImage1() {
+                var randomIndex = Math.floor(Math.random() * imageArray1.length);
+                $('.image-container-left img').attr('src', imageArray1[randomIndex].url);
+                $('.image-container-left a').attr('href', imageArray1[randomIndex].link);
+            }
 
             function setRandomContentImage2() {
                 var randomIndex = Math.floor(Math.random() * imageArray2.length);
@@ -103,6 +101,7 @@
                 $('.image-container-right a').attr('href', imageArray2[randomIndex].link);
             }
 
+            setRandomContentImage1();
             setRandomContentImage2();
         }
     });
