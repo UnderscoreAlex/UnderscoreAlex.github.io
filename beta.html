@@ -89,20 +89,14 @@
                 { url: 'https://cdn.discordapp.com/attachments/546361440731136008/1181710291986301048/image.png', link: 'https://www.clown.company/credits' }
             ];
 
-            function setRandomContentImage1() {
-                var randomIndex = Math.floor(Math.random() * imageArray1.length);
-                $('.image-container-left img').attr('src', imageArray1[randomIndex].url);
-                $('.image-container-left a').attr('href', imageArray1[randomIndex].link);
+            function setRandomContentImage(imageArray, container) {
+                var randomIndex = Math.floor(Math.random() * imageArray.length);
+                container.find('img').attr('src', imageArray[randomIndex].url);
+                container.find('a').attr('href', imageArray[randomIndex].link);
             }
 
-            function setRandomContentImage2() {
-                var randomIndex = Math.floor(Math.random() * imageArray2.length);
-                $('.image-container-right img').attr('src', imageArray2[randomIndex].url);
-                $('.image-container-right a').attr('href', imageArray2[randomIndex].link);
-            }
-
-            setRandomContentImage1();
-            setRandomContentImage2();
+            setRandomContentImage(imageArray1, $('.image-container-left'));
+            setRandomContentImage(imageArray2, $('.image-container-right'));
         }
     });
 </script>
