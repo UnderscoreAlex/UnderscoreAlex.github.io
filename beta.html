@@ -14,17 +14,17 @@
         /* Add CSS styles */
         pre { margin: 0; }
         .centered { text-align: center; }
-        .content-wrapper {
+  .content-wrapper {
     position: relative;
+    padding-top: 600px; /* Adjust padding to accommodate the fixed images */
 }
 
 .image-container-left,
 .image-container-right {
     width: 160px;
     height: 600px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    position: fixed;
+    top: 0;
 }
 
 .image-container-left {
