@@ -23,22 +23,22 @@
             max-width: 1000px; /* Adjust max-width as needed */
             margin: 0 auto;
         }
-        .image-container-left,
-        .image-container-right {
-            width: 160px;
-            height: 600px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+    .image-container-left,
+    .image-container-right {
+      width: 160px;
+      height: 600px;
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+    }
 
-        .image-container-left {
-            left: calc(50% - 580px); /* Adjust the value as needed */
-        }
+    .image-container-left {
+      left: 0;
+    }
 
-        .image-container-right {
-            right: calc(50% - 580px); /* Adjust the value as needed */
-        }
+    .image-container-right {
+      right: 0;
+    }
 
         .image-container img {
             width: 100%;
