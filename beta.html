@@ -43,26 +43,55 @@
         padding: 0 180px; /* Adjust padding to accommodate the fixed images */
         position: relative;
       }
-      /* Hidden class */
-      .hidden {
-        display: none;
-      }
     </style>
     <script type="text/javascript">
-      // Function to detect if the user is on a mobile device
-      function isMobileDevice() {
-        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-      }
+      $(function () {
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-      // Function to display the message for mobile users
-      function displayMobileMessage() {
-        if (isMobileDevice()) {
-          document.getElementById('mobile-message').classList.remove('hidden');
+        if (isMobile) {
+          // If user is on a mobile device, hide the content and display centered text instead
+          $('.content-wrapper').hide();
+          $('#centered-text').show();
+        } else {
+          // If user is not on a mobile device, display the content normally
+          $('.content-wrapper').show();
+          $('#centered-text').hide();
+          
+          // Your existing code for random images and links
+          $('#horse').jscroll({
+            padding: 2000,
+            loadingHtml: ''
+          });
+
+          var imageArray1 = [
+            { url: 'https://cdn.discordapp.com/attachments/632337938507628564/1208998056658468904/clompstore_ad.png?ex=65e5522e&is=65d2dd2e&hm=815202ff9f3da4309147eda11c2e32ade1f30e355a2f5a0788e89be15b2d2290&', link: 'https://www.shop.clown.company' },
+            { url: 'https://cdn.discordapp.com/attachments/546361440731136008/1181710205180981399/image.png', link: 'https://www.example.com' },
+            { url: 'https://cdn.discordapp.com/attachments/546361440731136008/1181710291986301048/image.png', link: 'https://www.clown.company/credits' }
+          ];
+
+          function setRandomContentImage1() {
+            var randomIndex = Math.floor(Math.random() * imageArray1.length);
+            $('.image-container-left img').attr('src', imageArray1[randomIndex].url);
+            $('.image-container-left a').attr('href', imageArray1[randomIndex].link);
+          }
+
+          setRandomContentImage1();
+
+          var imageArray2 = [
+            { url: 'https://cdn.discordapp.com/attachments/632337938507628564/1208998056658468904/clompstore_ad.png?ex=65e5522e&is=65d2dd2e&hm=815202ff9f3da4309147eda11c2e32ade1f30e355a2f5a0788e89be15b2d2290&', link: 'https://www.shop.clown.company' },
+            { url: 'https://cdn.discordapp.com/attachments/546361440731136008/1181710205180981399/image.png', link: 'https://www.example.com' },
+            { url: 'https://cdn.discordapp.com/attachments/546361440731136008/1181710291986301048/image.png', link: 'https://www.clown.company/credits' }
+          ];
+
+          function setRandomContentImage2() {
+            var randomIndex = Math.floor(Math.random() * imageArray2.length);
+            $('.image-container-right img').attr('src', imageArray2[randomIndex].url);
+            $('.image-container-right a').attr('href', imageArray2[randomIndex].link);
+          }
+
+          setRandomContentImage2();
         }
-      }
-
-      // Call the function to display the message
-      displayMobileMessage();
+      });
     </script>
   </head>
   <body>
@@ -71,26 +100,24 @@
       <img src="https://assets.bigcartel.com/theme_images/110731273/cooltext440547071313410.gif" alt="Centered Image">
     </div>
 
-    <!-- Mobile message -->
-    <div id="mobile-message" class="centered hidden">
-      <p>Please use a desktop for the full experience.</p>
+    <!-- Centered text for mobile devices -->
+    <div id="centered-text" class="centered" style="display: none;">
+      <h2>Sorry, this website is not available on mobile devices.</h2>
     </div>
 
     <!-- Rest of your content -->
-    <div class="centered">
-      <div class="content-wrapper">
-        <div class="image-container image-container-left" style="left: 0;">
-          <a href="" target="_blank"><img src="" alt="Image 1"></a>
-        </div>
-        <div id="horse">
-          <!-- Your center text -->
-          <a href="https://www.shop.clown.company">shop</a><br>
-          <a href="https://www.clown.company/credits">credits</a>
-          <a href="legs.html"></a>
-        </div>
-        <div class="image-container image-container-right" style="right: 0;">
-          <a href="" target="_blank"><img src="" alt="Image 2"></a>
-        </div>
+    <div class="content-wrapper">
+      <div class="image-container image-container-left" style="left: 0;">
+        <a href="" target="_blank"><img src="" alt="Image 1"></a>
+      </div>
+      <div id="horse">
+        <!-- Your center text -->
+        <a href="https://www.shop.clown.company">shop</a><br>
+        <a href="https://www.clown.company/credits">credits</a>
+        <a href="legs.html"></a>
+      </div>
+      <div class="image-container image-container-right" style="right: 0;">
+        <a href="" target="_blank"><img src="" alt="Image 2"></a>
       </div>
     </div>
   </body>
