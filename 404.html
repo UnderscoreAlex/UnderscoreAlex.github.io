@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nothing</title>
+    <title>Centered Image</title>
     <style>
         body {
             margin: 0;
@@ -14,13 +14,23 @@
             height: 100vh;
             background-color: black;
         }
-        img {
-            max-width: 100%;
-            max-height: 100%;
+        @keyframes playOnce {
+            to {
+                opacity: 1;
+            }
+        }
+        .image-container {
+            width: 400px; /* Adjust width as needed */
+            height: 250px; /* Adjust height as needed */
+            animation: playOnce 1s steps(1) forwards;
+            background-image: url("https://cdn.discordapp.com/attachments/546361440731136008/1209002284999123014/undertale_text_box.gif?ex=65e5561e&is=65d2e11e&hm=046ab3279dc7f27cd758995b8f69b6131dc880d4b21da9755f568b9f1ce6e40d");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
         }
     </style>
 </head>
 <body>
-    <img src="https://cdn.discordapp.com/attachments/546361440731136008/1209001324461690930/undertale_text_box.png?ex=65e55539&is=65d2e039&hm=c95f5c20cf2ff2a644071f835cf0d2f5f84bcca29bd7f7929fb64abafd493695" alt="Centered Image">
+    <div class="image-container"></div>
 </body>
 </html>
