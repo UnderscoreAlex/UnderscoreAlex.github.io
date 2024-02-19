@@ -12,22 +12,23 @@
       /* Add CSS styles */
       pre { margin: 0; }
       .centered { text-align: center; }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
       .content-wrapper {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        padding-top: 20vh; /* Adjust padding to center vertically */
-        position: relative;
-        max-width: 90vw; /* Adjust max-width as needed */
+        padding-top: 5vh; /* Adjust vertical padding */
+        max-width: 90vw; /* Adjust maximum width */
         margin: 0 auto;
       }
       .image-container {
-        width: 25vw; /* Adjust width as needed */
-        max-width: 160px; /* Limit maximum width */
-        position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1;
+        width: 80%; /* Adjust width as needed */
+        max-width: 400px; /* Limit maximum width */
+        position: relative;
       }
       .image-container img {
         width: 100%;
@@ -35,17 +36,9 @@
         display: block;
       }
       #horse {
-        flex: 1;
         text-align: center;
-        z-index: 0;
-        padding: 0 5vw; /* Adjust padding to scale with the viewport */
-        position: relative;
-      }
-      /* Disable zooming */
-      body {
-        touch-action: none;
-        -ms-touch-action: none;
-        overflow: hidden;
+        padding: 0 5vw; /* Adjust horizontal padding */
+        margin-top: 3vh; /* Adjust margin-top */
       }
     </style>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
@@ -114,7 +107,7 @@
 
     <!-- Rest of your content -->
     <div class="content-wrapper">
-      <div class="image-container image-container-left" style="left: 0;">
+      <div class="image-container image-container-left">
         <a href="" target="_blank"><img src="" alt="Image 1"></a>
       </div>
       <div id="horse">
@@ -123,7 +116,7 @@
         <a href="https://www.clown.company/credits">credits</a>
         <a href="legs.html"></a>
       </div>
-      <div class="image-container image-container-right" style="right: 0;">
+      <div class="image-container image-container-right">
         <a href="" target="_blank"><img src="" alt="Image 2"></a>
       </div>
     </div>
