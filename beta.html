@@ -11,62 +11,76 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script src="/jquery.jscroll.js"></script>
     <style type="text/css">
-        /* Add CSS styles */
-        pre { margin: 0; }
-        .centered { text-align: center; }
-        body {
-            position: relative;
-        }
+    /* Add CSS styles */
+    pre { margin: 0; }
+    .centered { text-align: center; }
+    body {
+        position: relative;
+    }
 
-        .image-container-left,
-        .image-container-right {
-            width: 160px;
-            height: 600px;
-            position: absolute;
-            top: 0;
-        }
+    .image-container-left,
+    .image-container-right {
+        width: 160px;
+        height: 600px;
+        position: absolute;
+        top: 0;
+    }
 
-        .image-container-left {
-            left: 0;
-        }
+    .image-container-left {
+        left: 0;
+    }
 
-        .image-container-right {
-            right: 0;
-        }
+    .image-container-right {
+        right: 0;
+    }
 
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
 
-        .content-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            max-width: 1000px; /* Adjust max-width as needed */
-            margin: 50px auto 0; /* Adjust top margin to accommodate the fixed images */
-        }
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        max-width: 1000px; /* Adjust max-width as needed */
+        margin: 50px auto 0; /* Adjust top margin to accommodate the fixed images */
+    }
 
-        #horse {
-            flex: 1;
-            text-align: center;
-            z-index: 0;
-            position: relative;
-            padding: 0 180px; /* Adjust padding to accommodate the fixed images */
-            margin-top: 50px; /* Compensate for the top margin */
-        }
+    #horse {
+        flex: 1;
+        text-align: center;
+        z-index: 0;
+        position: relative;
+        padding: 0 180px; /* Adjust padding to accommodate the fixed images */
+        margin-top: 50px; /* Compensate for the top margin */
+    }
 
-         #horsemobile {
-            flex: 1;
-            text-align: center;
-            z-index: 0;
-            position: relative;
-            padding: 0 180px; /* Adjust padding to accommodate the fixed images */
-            margin-top: 50px; /* Compensate for the top margin */
-        }
-    </style>
+     #horsemobile {
+        flex: 1;
+        text-align: center;
+        z-index: 0;
+        position: relative;
+        padding: 0 180px; /* Adjust padding to accommodate the fixed images */
+        margin-top: 50px; /* Compensate for the top margin */
+    }
+
+    /* Added CSS for centered-text */
+    .centered-text {
+        text-align: center;
+        margin-top: 10px; /* Adjust top margin for spacing */
+        position: relative;
+        width: 100%; /* Ensure full width */
+    }
+
+    .centered-text > div {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left; /* Adjust text alignment if needed */
+    }
+</style>
 <script type="text/javascript">
     $(function () {
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
@@ -122,7 +136,9 @@
 </div>
 <!-- Centered text for mobile -->
 <div class="centered-text" ><!--style="display: none;"> -->
-
+    <div style="text-align: center; padding-top: 10px;">
+        <img src="https://cdn.discordapp.com/attachments/546361440731136008/1210071618227937330/wordar2t.png?ex=65e93a03&is=65d6c503&hm=39b1f7bc36c7529d47a7132eb17020dc7ed2073fe4842bf6f10ca880713d9f13" alt="Disclaimer" width="381" height="221" style="display: block; margin: 0 auto;">
+    </div>
         <div id="horsemobile">
             <!-- Your center text -->
           <!--  <img src="https://cdn.discordapp.com/attachments/546361440731136008/1210071618227937330/wordar2t.png?ex=65e93a03&is=65d6c503&hm=39b1f7bc36c7529d47a7132eb17020dc7ed2073fe4842bf6f10ca880713d9f13" alt="Disclaimer" width="381" height="221"> -->
