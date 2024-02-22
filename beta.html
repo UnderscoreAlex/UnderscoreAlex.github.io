@@ -72,11 +72,9 @@
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
         if (isMobile) {
-            // If user is on a mobile device, hide the ads
-            $('.image-container').hide();
-
-            // Load content from legs.html and inject it into #horsemobile
-        //    $('#horsemobile').load('legs.html');
+            // If user is on a mobile device, hide the content and display centered text instead
+            $('.content-wrapper').hide();
+            $('.centered-text').show();
         } else {
             // If user is not on a mobile device, display the content normally
             $('.content-wrapper').show();
@@ -109,12 +107,6 @@
             setRandomContentImage(imageArray1, $('.image-container-left'));
             setRandomContentImage(imageArray2, $('.image-container-right'));
         }
-        
-        // Enable scrolling functionality on #horsemobile
-        $('#horsemobile').jscroll({
-            padding: 2000,
-            loadingHtml: ''
-        });
     });
 </script>
 </head>
@@ -127,7 +119,7 @@
 <div class="centered-text" ><!--style="display: none;"> -->
         <div id="horsemobile">
             <!-- Your center text -->
-            <a>Please use the desktop version for the full clompany experience</a><br>
+            <h1>Please use the desktop version for the full clompany experience</h1>
             <a href="https://www.shop.clown.company">shop</a><br>
             <a href="https://www.clown.company/credits">credits</a>
             <a href="legs.html"></a>
