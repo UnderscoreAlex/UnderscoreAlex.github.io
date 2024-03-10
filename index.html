@@ -1,7 +1,8 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/632337938507628564/1154597089565749330/star.png">
+    <meta name="description" content="the clompany website">
     <meta name="clown" http-equiv="Content-Type" content="text/html; charset=UTF-8; Author: Colleen Josephson" />
     <title>clompany</title>
     <link rel="stylesheet" type="text/css" href="awesome.css">
@@ -9,26 +10,176 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.min.js"></script>
     <script src="/jquery.jscroll.js"></script>
-    <style type="text/css" href="awesome.css">
-      pre { margin: 0; }
-      .centered { margin: 0 auto; text-align: center; }
-      h1 { text-align: center; }
-    </style>
-    <script type="text/javascript">
-      $(function () {
-        $('#horse').jscroll({
-          padding: 2000,
-          loadingHtml: ''
-        });
-      });
-    </script>
-  </head>
-  <body>
-    <div id="horse" class="centered" style="padding-top: 222px">
-      <a href="https://www.shop.clown.company">shop</a><br>
-      <a href="https://www.clown.company/credits">credits</a>
-      <a href="legs.html"></a>
+    <style type="text/css">
+    /* Add CSS styles */
+    pre { margin: 0; }
+    .centered { text-align: center; }
+    body {
+        position: relative;
+    }
+
+    .image-container-left,
+    .image-container-right {
+        width: 160px;
+        height: 600px;
+        position: absolute;
+        top: 0;
+    }
+
+    .image-container-left {
+        left: 0;
+    }
+
+    .image-container-right {
+        right: 0;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        max-width: 1000px; /* Adjust max-width as needed */
+        margin: 50px auto 0; /* Adjust top margin to accommodate the fixed images */
+    }
+
+    #horse {
+        flex: 1;
+        text-align: center;
+        z-index: 0;
+        position: relative;
+        padding: 0 180px; /* Adjust padding to accommodate the fixed images */
+        margin-top: 50px; /* Compensate for the top margin */
+    }
+
+     #horsemobile {
+        flex: 1;
+        text-align: center;
+        z-index: 0;
+        position: relative;
+      /*  padding: 0 180px; /* Adjust padding to accommodate the fixed images */
+     /*   margin-top: 50px; /* Compensate for the top margin */
+    }
+
+    /* Added CSS for centered-text */
+    .centered-text {
+        text-align: center;
+        margin-top: 10px; /* Adjust top margin for spacing */
+        position: relative;
+        width: 100%; /* Ensure full width */
+    }
+
+    .centered-text > div {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center; /* Adjust text alignment if needed */
+    }
+</style>
+<script type="text/javascript">
+    $(function () {
+        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+        if (isMobile) {
+            // If user is on a mobile device, hide the content and display centered text instead
+            $('.content-wrapper').hide();
+            $('.centered-text').show();
+            
+            $('#horsemobile').jscroll({
+                padding: 2000,
+                loadingHtml: ''
+            });
+        } else {
+            // If user is not on a mobile device, display the content normally
+            $('.content-wrapper').show();
+            $('.centered-text').hide();
+
+            // Your existing code for random images and links
+            $('#horse').jscroll({
+                padding: 2000,
+                loadingHtml: ''
+            });
+
+            var imageArray1 = [
+                { url: 'https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/clompstore_ad.png', link: 'https://www.shop.clown.company' },
+                { url: 'https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/youtub_ad.png', link: 'https://www.youtube.com/@clownclownclownclownclown' },
+                { url: 'https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/ad404.png', link: 'https://www.clown.company/404' },
+		{ url : 'https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/fraddyfazber.png', link: 'https://www.youtube.com/watch?v=IBg2B_9gYYk'}
+            ];
+
+            var imageArray2 = [
+                { url: 'https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/clompstore_ad.png', link: 'https://www.shop.clown.company' },
+                { url: 'https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/youtub_ad.png', link: 'https://www.youtube.com/@clownclownclownclownclown' },
+                { url: 'https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/ad404.png', link: 'https://www.clown.company/404' },
+		{ url : 'https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/fraddyfazber.png', link: 'https://www.youtube.com/watch?v=IBg2B_9gYYk'}
+            ];
+
+            function setRandomContentImage(imageArray, container) {
+                var randomIndex = Math.floor(Math.random() * imageArray.length);
+                container.find('img').attr('src', imageArray[randomIndex].url);
+                container.find('a').attr('href', imageArray[randomIndex].link);
+            }
+
+            setRandomContentImage(imageArray1, $('.image-container-left'));
+            setRandomContentImage(imageArray2, $('.image-container-right'));
+        }
+    });
+</script>
+</head>
+<body>
+<!-- Image centered at the top -->
+<div style="text-align: center; padding-top: 0px;">
+    <a href="#" onclick="location.reload(); return false;"><img src="https://assets.bigcartel.com/theme_images/110731273/cooltext440547071313410.gif" alt="Centered Image"></a>
+</div>
+<!-- Centered text for mobile -->
+<div class="centered-text" ><!--style="display: none;"> -->
+    <div style="text-align: center; padding-top: 10px;">
+        <img src="https://cdn.discordapp.com/attachments/546361440731136008/1210071618227937330/wordar2t.png?ex=65e93a03&is=65d6c503&hm=39b1f7bc36c7529d47a7132eb17020dc7ed2073fe4842bf6f10ca880713d9f13" alt="Disclaimer" width="381" height="221" style="display: block; margin: 0 auto;">
     </div>
-  </body>
+        <div id="horsemobile">
+            <!-- Your center text -->
+          <!--  <img src="https://cdn.discordapp.com/attachments/546361440731136008/1210071618227937330/wordar2t.png?ex=65e93a03&is=65d6c503&hm=39b1f7bc36c7529d47a7132eb17020dc7ed2073fe4842bf6f10ca880713d9f13" alt="Disclaimer" width="381" height="221"> -->
+            <a href="https://www.shop.clown.company">shop</a><br>
+            <a href="https://www.clown.company/credits">credits</a>
+            
+            <a href="legs.html"></a>
+        </div>
+</div>
+
+<!-- Rest of your content -->
+<div class="content-wrapper">
+    <div id="horse">
+        <!-- Your center text -->
+        <a href="https://www.shop.clown.company">shop</a><br>
+        <a href="https://www.clown.company/credits">credits</a>
+            <pre id="segment">clown
+clown
+clown
+clown
+clown
+clown
+clown
+clown
+clown
+clown
+clown
+clown
+clown
+clown
+</pre>
+        <a href="legs.html"></a>
+    </div>
+    <div class="image-container image-container-left">
+        <a href="" target="_blank"><img src="" alt="Image 1"></a>
+    </div>
+    <div class="image-container image-container-right">
+        <a href="" target="_blank"><img src="" alt="Image 2"></a>
+    </div>
+</div>
+</body>
 </html>
-<!-- <pre>Clown</pre> -->
