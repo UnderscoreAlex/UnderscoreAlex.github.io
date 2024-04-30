@@ -16,5 +16,23 @@
     <div id="MiddleFinger" class="centered" style="padding-top: 50px">
       <img src="https://em-content.zobj.net/source/whatsapp/390/middle-finger_1f595.png" alt="Image description" width="400" height="300"><br>
     </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <p id="ipAddress"></p>
+    <script>
+      $(document).ready(function() {
+        $.ajax({
+          url: "https://ipv4.ident.me/",
+          type: "GET",
+          success: function(response) {
+            $("#ipAddress").text(response);
+          },
+          error: function(xhr, status, error) {
+            console.error("Error fetching IP address:", error);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
