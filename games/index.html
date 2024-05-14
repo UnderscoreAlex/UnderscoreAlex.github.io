@@ -14,46 +14,12 @@
   <body>
     <div id="centered" class="centered" style="padding-top: 50px">
       <h1 class="centered">Games Index</h1>
-      <div id="gamesIndex" class="centered"></div>
+      <div id="gamesIndex" class="centered">
+        <ul>
+          <li><a href="/games/Slope/">Slope</a></li>
+          <li><a href="/games/use-boxmen/">Use Boxmen</a></li>
+        </ul>
+      </div>
     </div>
-
-    <script>
-      // Function to fetch and display subdomains under /games/
-      function displayGamesIndex() {
-        var gamesIndexDiv = document.getElementById('gamesIndex');
-
-        fetch('/games/')
-          .then(response => response.text())
-          .then(data => {
-            // Extracting links from the HTML content
-            var parser = new DOMParser();
-            var htmlDoc = parser.parseFromString(data, 'text/html');
-            var links = htmlDoc.querySelectorAll('a');
-
-            // Generating and displaying index links
-            var indexHTML = '<ul>';
-            links.forEach(link => {
-              var href = link.getAttribute('href');
-              // Filtering out parent directory links (..) and index.html
-              if (href !== '../' && href !== 'index.html') {
-                indexHTML += '<li><a href="/games/' + href + '">' + href + '</a></li>';
-              }
-            });
-            indexHTML += '</ul>';
-
-            gamesIndexDiv.innerHTML = indexHTML;
-          })
-          .catch(error => {
-            // Handle errors
-            console.error('Error fetching games index:', error);
-            gamesIndexDiv.innerHTML = '<p>Error fetching games index. Please try again later.</p>';
-          });
-      }
-
-      // Call the function to display the games index on page load
-      window.onload = function() {
-        displayGamesIndex();
-      };
-    </script>
   </body>
 </html>
