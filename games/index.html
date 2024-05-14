@@ -5,15 +5,55 @@
     <link rel="stylesheet" type="text/css" href="awesome.css">
     <link rel="shortcut icon" href="https://raw.githubusercontent.com/UnderscoreAlex/UnderscoreAlex.github.io/main/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style type="text/css" href="awesome.css">
+    <style>
       pre { margin: 0; }
       .centered { margin: 0 auto; text-align: center; }
       h1 { text-align: center; }
     </style>
   </head>
   <body>
-    <div id="Centered" class="centered" style="padding-top: 50px">
-       <h1 class="centered">Games Index Coming Soon</h1>
+    <div id="centered" class="centered" style="padding-top: 50px">
+      <h1 class="centered">Games Index</h1>
+      <div id="gamesIndex" class="centered"></div>
     </div>
+
+    <script>
+      // Function to fetch and display subdomains under /games/
+      function displayGamesIndex() {
+        var gamesIndexDiv = document.getElementById('gamesIndex');
+
+        fetch('/games/')
+          .then(response => response.text())
+          .then(data => {
+            // Extracting links from the HTML content
+            var parser = new DOMParser();
+            var htmlDoc = parser.parseFromString(data, 'text/html');
+            var links = htmlDoc.querySelectorAll('a');
+
+            // Generating and displaying index links
+            var indexHTML = '<ul>';
+            links.forEach(link => {
+              var href = link.getAttribute('href');
+              // Filtering out parent directory links (..) and index.html
+              if (href !== '../' && href !== 'index.html') {
+                indexHTML += '<li><a href="/games/' + href + '">' + href + '</a></li>';
+              }
+            });
+            indexHTML += '</ul>';
+
+            gamesIndexDiv.innerHTML = indexHTML;
+          })
+          .catch(error => {
+            // Handle errors
+            console.error('Error fetching games index:', error);
+            gamesIndexDiv.innerHTML = '<p>Error fetching games index. Please try again later.</p>';
+          });
+      }
+
+      // Call the function to display the games index on page load
+      window.onload = function() {
+        displayGamesIndex();
+      };
+    </script>
   </body>
 </html>
