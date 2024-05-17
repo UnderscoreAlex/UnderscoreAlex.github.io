@@ -12,6 +12,8 @@
         margin: 0;
         padding: none;
       }
+      
+      ul { list-style-type: none; padding: 0; } /* removes the stupid fucking bullet points */
 
       /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
       #canvas {
@@ -28,7 +30,9 @@
         <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
         <canvas id="loadingCanvas" oncontextmenu="event.preventDefault()" width="800" height="600"></canvas>
       </div>
-      <li><a href="http://stabyourself.net/mari0/">Original Download Page0</a></li>
+        <ul>
+          <li><a href="http://stabyourself.net/mari0/">Original Download Page0</a></li>
+        </ul>
     </center>
 
     <script type='text/javascript'>
