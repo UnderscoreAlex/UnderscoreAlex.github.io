@@ -22,3 +22,12 @@ if (document.readyState != 'loading') {
 } else {
 	document.addEventListener("DOMContentLoaded", fillGame)
 }
+
+function Trackit(a, b, c, d, e, f, g)
+  {
+    // tracking is so cringe
+    // but if i don't put this in
+    // console throws an err'r
+	console.log(a + "\n" + b + "\n" + c + "\n" + d + "\n" + e + "\n" + f + "\n" + g);
+	return;
+  }
